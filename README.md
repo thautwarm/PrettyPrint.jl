@@ -25,7 +25,7 @@ struct S2
 end
 
 data = S2(
-    ["114514", "as we cam"],
+    ["114514", "as we can"],
     S1(42, 9.96)
 )
 pprint(data) # or print(pformat(data))
