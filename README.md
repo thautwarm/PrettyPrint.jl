@@ -60,7 +60,7 @@ pprint(
         [Account("van", "gd"), Account("thautwarm", "996icu")]
 )
 println()
-pprint_impl(io, account::Account, indent::Int, newline::Bool) = print(io, "Account($(account.username))")
+PrettyPrint.pprint_impl(io, account::Account, indent::Int, newline::Bool) = print(io, "Account($(account.username))")
 
 @info :after_extension
 pprint(
@@ -85,14 +85,8 @@ produces
 ]
 [ Info: after_extension
 [
-  Account(
-    username="van",
-    password="gd",
-  ),
-  Account(
-    username="thautwarm",
-    password="996icu",
-  ),
+  Account(van),
+  Account(thautwarm),
 ]
 ```
 

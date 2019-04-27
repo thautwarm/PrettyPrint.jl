@@ -35,7 +35,7 @@ using Test
             [Account("van", "gd"), Account("thautwarm", "996icu")]
     )
     println()
-    pprint_impl(io, account::Account, indent::Int, newline::Bool) = print(io, "Account($(account.username))")
+    PrettyPrint.pprint_impl(io, account::Account, indent::Int, newline::Bool) = print(io, "Account($(account.username))")
 
     @info :after_extension
     pprint(
