@@ -96,5 +96,6 @@ produces
 2. Tuple
 3. Set
 4. String
+5. Nothing
 
 Any other datatypes are also supported with a default `pprint_impl`.
