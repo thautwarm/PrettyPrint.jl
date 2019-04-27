@@ -46,7 +46,7 @@ S2(
 )
 ```
 
-## Pretty Print Extension for any other type
+## Pretty print extension for any other type
 
 ```julia
 using PrettyPrint
