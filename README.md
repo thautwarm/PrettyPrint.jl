@@ -5,6 +5,11 @@
 
 A simple package so I think no need to say much.
 
+## Install
+
+```
+pkg> add https://github.com/thautwarm/PrettyPrint.jl#master
+```
 ## Basic Usage
 ```julia
 using PrettyPrint
