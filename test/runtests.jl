@@ -1,9 +1,9 @@
 using PrettyPrint
 using Test
 
+
 @testset "PrettyPrint.jl" begin
     # Write your own tests here.
-    using PrettyPrint
 
     struct S1
         i :: Int
@@ -16,30 +16,42 @@ using Test
     end
 
     data = S2(
-        ["114514", "as we cam"],
+        ["114514", "as we can"],
         S1(42, 9.96)
     )
-    pprint(data) # or print(pformat(data))
-    println()
-    print(pformat(data))
-    println()
+
+    @test pformat(data) == """S2(
+  s=[
+    "114514",
+    "as we can",
+  ],
+  s1=S1(
+    i=42,
+    f=9.96,
+  ),
+)"""
 
     using PrettyPrint
     struct Account
         username :: String
         password :: String
     end
+    @testset "extension" begin
 
-    @info :before_extension
-    pprint(
-            [Account("van", "gd"), Account("thautwarm", "996icu")]
-    )
-    println()
+    @test pformat([Account("van", "gd"), Account("thautwarm", "996icu")]) == """[
+  Account(
+    username="van",
+    password="gd",
+  ),
+  Account(
+    username="thautwarm",
+    password="996icu",
+  ),
+]"""
     PrettyPrint.pprint_impl(io, account::Account, indent::Int, newline::Bool) = print(io, "Account($(account.username))")
-
-    @info :after_extension
-    pprint(
-            [Account("van", "gd"), Account("thautwarm", "996icu")]
-    )
-    println()
+    @test pformat([Account("van", "gd"), Account("thautwarm", "996icu")]) == """[
+  Account(van),
+  Account(thautwarm),
+]"""
+    end
 end
