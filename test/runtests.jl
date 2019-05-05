@@ -1,6 +1,9 @@
 using PrettyPrint
 using Test
-
+struct Account
+    username :: String
+    password :: String
+end
 
 @testset "PrettyPrint.jl" begin
     # Write your own tests here.
@@ -31,13 +34,7 @@ using Test
   ),
 )"""
 
-    using PrettyPrint
-    struct Account
-        username :: String
-        password :: String
-    end
     @testset "extension" begin
-
     @test pformat([Account("van", "gd"), Account("thautwarm", "996icu")]) == """[
   Account(
     username="van",
