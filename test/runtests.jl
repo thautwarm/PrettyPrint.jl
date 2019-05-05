@@ -5,18 +5,17 @@ struct Account
     password :: String
 end
 
+struct S1
+  i :: Int
+  f :: Float64
+end
+
+struct S2
+  s  :: Vector{String}
+  s1 :: S1
+end
+
 @testset "PrettyPrint.jl" begin
-    # Write your own tests here.
-
-    struct S1
-        i :: Int
-        f :: Float64
-    end
-
-    struct S2
-        s  :: Vector{String}
-        s1 :: S1
-    end
 
     data = S2(
         ["114514", "as we can"],
