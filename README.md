@@ -3,13 +3,12 @@
 [![Build Status](https://travis-ci.com/thautwarm/PrettyPrint.jl.svg?branch=master)](https://travis-ci.com/thautwarm/PrettyPrint.jl)
 [![Codecov](https://codecov.io/gh/thautwarm/PrettyPrint.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/thautwarm/PrettyPrint.jl)
 
-A simple package so I think no need to say much.
-
 ## Install
 
 ```
 pkg> add https://github.com/thautwarm/PrettyPrint.jl#master
 ```
+
 ## Basic Usage
 ```julia
 using PrettyPrint
