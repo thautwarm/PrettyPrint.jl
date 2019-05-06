@@ -1,7 +1,7 @@
 module PrettyPrint
 export pprint, pformat, pprint_impl
 
-function pprint_for_seq(io, left, right, seq, indent, newline)
+function pprint_for_seq(io, left, right, seq :: Union{Vector, Tuple}, indent, newline)
     print(io, left)
     n = length(seq)
     is_empty = n === 0
@@ -46,7 +46,7 @@ function pprint_impl(io, seq::Tuple, indent, newline)
 end
 
 function pprint_impl(io, seq::Set, indent, newline)
-    pprint_for_seq(io, '{', '}', seq, indent, newline)
+    pprint_for_seq(io, '{', '}', collect(seq), indent, newline)
 end
 
 function pprint_impl(io, ::Nothing, indent, newline)

@@ -49,5 +49,14 @@ end
   Account(van),
   Account(thautwarm),
 ]"""
+    @test pformat(Set([Account("van", "gd"), Account("thautwarm", "996icu")])) == """{
+  Account(van),
+  Account(thautwarm),
+}"""
+    @test pformat((Account("van", "gd"), Account("thautwarm", "996icu"))) == """(
+  Account(van),
+  Account(thautwarm),
+)"""
     end
+
 end
