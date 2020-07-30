@@ -110,7 +110,14 @@ end
     PrettyPrint.is_static_t(::Type{C}) = true
     @test is_static_t(typeof(C(1, 2))) == true
     @test pformat(C(1, 2)) == "C(a=1, b=2)"
+    @test pformat(SubString("aa", 1)) == "\"aa\""
 
+    @test is_simple_t(Int) == true
+    @test is_simple_t(SubString) == true
+    @test is_simple_t(Complex{Int}) == true
+    @test is_simple_t(Char) == true
+    @test is_simple_t(Nothing) == true
+    @test is_simple(PrettyPrint.PPPair("1", "=", "3")) == true
     
   end
 
