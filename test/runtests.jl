@@ -21,6 +21,10 @@ struct B
   b :: Int
 end
 
+struct C
+  a
+  b
+end
 @testset "PrettyPrint.jl" begin
 
     data = S2(
@@ -99,6 +103,15 @@ end
  92, 93, 94, 95, 96, 97, 98, 99, 
  100]"""
 
+    @test pformat([1]) == "[1,]"
+    @test pformat((1, )) == "(1,)"
+
+    PrettyPrint.is_simple_t(::Type{C}) = true
+    PrettyPrint.is_static_t(::Type{C}) = true
+    @test is_static_t(typeof(C(1, 2))) == true
+    @test pformat(C(1, 2)) == "C(a=1, b=2)"
+
+    
   end
 
 end
