@@ -48,7 +48,7 @@ S2(
 )
 ```
 
-## Pretty print extension for any other type
+## Extensions via `pp_impl`
 
 ```julia
 using PrettyPrint
