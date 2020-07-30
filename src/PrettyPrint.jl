@@ -1,5 +1,5 @@
 module PrettyPrint
-export pprint, pformat, is_simple, is_simple_t, is_atom_t, is_static_t, pp_impl, pp_impl_dynamic, pp_impl_static, MaxIndentExpected
+export pprint, pprintln, pformat, is_simple, is_simple_t, is_atom_t, is_static_t, pp_impl, pp_impl_dynamic, pp_impl_static, MaxIndentExpected
 
 
 struct PPPair{FieldName, FieldContent}
@@ -203,6 +203,13 @@ pp_impl(io, s :: String, indent) = begin
     print(io, s)
     length(s) + indent
 end
+
+pprintln(io, s) = begin
+    pprint(io, s)
+    print(io, '\n')
+end
+
+pprintln(s) = pprintln(stdout, s)
 
 @deprecate pprint(io, data, indent, newline) pprint(io, data, indent)
 @deprecate pp_impl(io, data, indent, newline) pp_impl(io, data, indent)

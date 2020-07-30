@@ -118,6 +118,7 @@ end
     @test is_simple_t(Char) == true
     @test is_simple_t(Nothing) == true
     @test is_simple(PrettyPrint.PPPair("1", "=", "3")) == true
+    pprintln(true)
     
   end
 

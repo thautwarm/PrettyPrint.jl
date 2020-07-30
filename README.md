@@ -7,10 +7,11 @@ PrettyPrint.jl is a library for easy pretty printing in Julia.
 
 It does not aim to provide very high extensibility and customizations(but still very rich), instead, it targets extreme simplicity and *99%* use cases when pretty printing is needed.
 
-*99%* users exclusively use 2 functions `pprint` and `pformat`.
+*99%* users exclusively use 2 functions `pprintln` and `pformat`.
 
 - `pprint(io::IO, data)::Nothing`
 - `pformat(data)::String`
+- `pprintln`: add a newline after `pprint`
 
 ## Install
 
@@ -36,7 +37,7 @@ data = S2(
     ["114514", "as we can"],
     S1(42, 9.96)
 )
-pprint(data) # or print(pformat(data))
+pprintln(data) # or println(pformat(data))
 ```
 
 produces
