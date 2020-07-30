@@ -63,7 +63,7 @@ produces
 
 ```julia
 S2(
-  s=["114514", "as we cam"],
+  s=["114514", "as we can"],
   s1=S1(i=42, f=9.96),
 )
 ```
