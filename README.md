@@ -12,6 +12,25 @@ It does not aim to provide very high extensibility and customizations(but still 
 - `pprint(io::IO, data)::Nothing`
 - `pformat(data)::String`
 
+## Tips for `v0.1` Users
+
+`v0.1` APIs broke because I didn't find a good approach to emit deprecation warnings when adding method overloads incorrectly. Only in this way can I prevent users continuously using `pprint_impl(io, data, indent, newline) = ...`.
+
+
+**A pp extension method implementation change to `pp_impl(io, data, indent)` instead of `pprint_impl(io, data, indent, newline)`.**
+
+Besides, the new API `pp_impl` should **return an integer** indicating the final indentation level.
+
+Example:
+```julia
+function PrettyPrint.pp_impl(io, data::MyData, indent::Int)
+   s = "<" * repr(data) * ">"
+   print(io, s)
+   return length(s) + indent
+end
+```
+
+
 ## Install
 
 ```
