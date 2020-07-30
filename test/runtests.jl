@@ -60,12 +60,6 @@ end
   :b : Account(thautwarm),
 }"""
 
-  pprint(Set([Account("van", "gd"), Account("thautwarm", "996icu")]))
-  @test pformat(Set([Account("van", "gd"), Account("thautwarm", "996icu")])) == """{
-  Account(thautwarm),
-  Account(van),
-}"""
-
   @test pformat(1 => 2) == "1 => 2"
 
   @test pformat(Any[1 + 2im, 3]) == "[1 + 2im, 3]"
