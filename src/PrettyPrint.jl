@@ -1,5 +1,5 @@
 module PrettyPrint
-export pprint, pformat, is_atom_t, is_static_t, pp_impl, pp_impl_dynamic, pp_impl_static, MaxIndentExpected
+export pprint, pformat, is_simple, is_simple_t, is_atom_t, is_static_t, pp_impl, pp_impl_dynamic, pp_impl_static, MaxIndentExpected
 
 
 struct PPPair{FieldName, FieldContent}
