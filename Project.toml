@@ -1,13 +1,14 @@
 name = "PrettyPrint"
 uuid = "8162dcfd-2161-5ef2-ae6c-7681170c5f98"
 authors = ["thautwarm <twshere@outlook.com>"]
-version = "0.1.0"
-
-[extras]
-Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
-
-[targets]
-test = ["Test"]
+version = "0.2.0"
 
 [compat]
 julia = ">= 1.0"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+StructArrays = "09ab397b-f2b6-538f-b94a-2f83cf4a842a"
+
+[targets]
+test = ["Test", "StructArrays"]
