@@ -52,10 +52,6 @@ end
     @test pformat(Set([Account("van", "gd")])) == """{
   Account(van),
 }"""
-    @test pformat((Account("van", "gd"), Account("thautwarm", "996icu"))) == """(
-  Account(van),
-  Account(thautwarm),
-)"""
 
   pprint(Dict(:a=>Account("van", "gd"), :b=>Account("thautwarm", "996icu")))
 
