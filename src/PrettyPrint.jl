@@ -12,10 +12,6 @@ struct PPMetaSymbol{S}
     s :: S
 end
 
-Base.show(io::IO, p::PPPair) = begin 
-    pprint(io, p)
-end
-
 Base.show(io::IO, p::PPMetaSymbol) = Base.print(io, p.s)
 
 is_simple_t(a) = isprimitivetype(a)
@@ -37,15 +33,12 @@ is_atom_t(::Type{<:Symbol}) = true
 is_atom_t(::Type{<:Complex}) = true
 is_atom_t(::Type{<:PPMetaSymbol}) = true
 is_atom_t(::Type{Nothing}) = true
-is_atom_t(::Type{PPPair{A1, A2}}) where {A1, A2} = is_atom_t(A1) && is_atom_t(A2)
 is_atom(::T) where T = is_atom_t(T)
 
 is_static_t(a) = isprimitivetype(a)
 is_static_t(::Type{String}) = true
 is_static_t(::Type{Symbol}) = true
 is_static_t(::Type{<:Complex}) = true
-
-
 
 
 const Indentation = Int
