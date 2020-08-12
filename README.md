@@ -131,7 +131,7 @@ pprint([Account("van", "gd")])
 
 What's the difference?
 
-**Because `PrettyPrint.is_simple_t(Int) == true` while `PrettyPrint.is_simple_t(Int) == false`**.
+**Because `PrettyPrint.is_simple_t(Int) == true` while `PrettyPrint.is_simple_t(Account) == false`**.
 
 
 If you want to have the following effect:
