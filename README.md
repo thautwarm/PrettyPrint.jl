@@ -13,6 +13,17 @@ It does not aim to provide very high extensibility and customizations(but still 
 - `pformat(data)::String`
 - `pprintln`: add a newline after `pprint`
 
+## Alternatives
+
+There are other pprint libraries in Julia ecosystem, some of which are more extensible but might not very user-friendly, while some takes an opposite approach.
+
+- [GarishPrint.jl](https://github.com/Roger-luo/GarishPrint.jl): An opinioned pretty printing package for Julia objects. Only export a `pprint`.
+- [PrettyPrinting.jl](https://github.com/MechanicalRabbit/PrettyPrinting.jl): Julia library for optimal formatting of composite data structures. Highly extensible and support pretty-printing a wide range of builtin data types.
+- [PrettyNumbers](https://github.com/ronisbr/PrettyNumbers.jl): Pretty print numbers in Julia.
+
+Choose the one that fits your use.
+
+
 ## Tips for `v0.1` Users
 
 `v0.1` APIs broke because I didn't find a good approach to emit deprecation warnings when adding method overloads incorrectly. Only in this way can I prevent users continuously using `pprint_impl(io, data, indent, newline) = ...`.
